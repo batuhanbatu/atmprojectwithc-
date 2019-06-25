@@ -14,12 +14,12 @@ class Account
 			name = nm;
 			accountNumber = an;
 		}
-		double deposit(double a) //Para yatýrma
+		double deposit(double a) //Para yatirma
 		{
 			setBalance(balance += a);
 			return getBalance();
 		}
-		double withDraw(double a) //Para çekmek
+		double withDraw(double a) //Para cekmek
 		{
 			setBalance(balance -= a);
 			return getBalance();
@@ -29,15 +29,15 @@ class Account
 			setBalance(balance + (balance*rate));
 			return getBalance();
 		}
-		double getBalance() //Hesaptaki parayý göstermek
+		double getBalance() //Hesaptaki parayi gostermek
 		{
 			return balance;
 		}
-		void setBalance(double a) //Hesaptaki parayý düzenlemek
+		void setBalance(double a) //Hesaptaki parayi duzenlemek
 		{
 			balance = a;
 		}
-		void moneyTransfer(Account &a, Account &b, double c) //Hesaptan hesaba para aktarýmý
+		void moneyTransfer(Account &a, Account &b, double c) //Hesaptan hesaba para aktarimi
 		{
 			cout << "Balance of the account (" << b.accountNumber << ") is " << b.deposit(c) << "\n";
 			cout << "Balance of your account is " << a.withDraw(c) << "\n";
@@ -46,7 +46,7 @@ class Account
 class OverdraftAccount : public Account
 {
 	public:
-		double withDraw(double m, Account &a) //Para çekmek
+		double withDraw(double m, Account &a) //Para cekmek
 		{
 			a.setBalance(a.getBalance() - (m + m*0.05));
 			return a.getBalance();
